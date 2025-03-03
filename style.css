@@ -21,3 +21,23 @@ button {
     margin: 2px;
     background-color: blue;
 }
+.bar-container {
+    position: relative;
+    display: inline-block;
+    text-align: center;
+}
+
+.bar {
+    display: block;
+    position: relative;
+}
+
+.bar-label {
+    position: absolute;
+    bottom: -20px; /* Moves number below the bar */
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 14px;
+    color: white; /* Change this if needed */
+}
+
