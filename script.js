@@ -1,3 +1,10 @@
+// Speed Controller
+let speed = 300; // Default speed
+
+document.getElementById("speed").addEventListener("input", function() {
+    speed = this.value;
+});
+
 // Function to generate a random array
 function generateArray() {
     let container = document.getElementById("array-container");
@@ -25,7 +32,7 @@ async function bubbleSort() {
             bars[j].style.backgroundColor = "red";
             bars[j + 1].style.backgroundColor = "red";
 
-            await new Promise((resolve) => setTimeout(resolve, 100));
+            await new Promise((resolve) => setTimeout(resolve, speed));
 
             if (parseInt(bars[j].style.height) > parseInt(bars[j + 1].style.height)) {
                 let tempHeight = bars[j].style.height;
@@ -50,7 +57,7 @@ async function selectionSort() {
 
         for (let j = i + 1; j < len; j++) {
             bars[j].style.backgroundColor = "yellow"; // Highlight current comparison
-            await new Promise((resolve) => setTimeout(resolve, 100));
+            await new Promise((resolve) => setTimeout(resolve, speed));
 
             if (parseInt(bars[j].style.height) < parseInt(bars[minIndex].style.height)) {
                 bars[minIndex].style.backgroundColor = "blue"; // Reset previous min
@@ -82,12 +89,12 @@ async function insertionSort() {
         let j = i - 1;
         bars[i].style.backgroundColor = "red"; // Highlight the key element
 
-        await new Promise((resolve) => setTimeout(resolve, 200));
+        await new Promise((resolve) => setTimeout(resolve, speed));
 
         while (j >= 0 && parseInt(bars[j].style.height) > key) {
             bars[j + 1].style.height = bars[j].style.height;
             bars[j].style.backgroundColor = "yellow"; // Highlight moving elements
-            await new Promise((resolve) => setTimeout(resolve, 100));
+            await new Promise((resolve) => setTimeout(resolve, speed));
             j--;
         }
         bars[j + 1].style.height = `${key}px`;
